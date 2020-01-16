@@ -15,6 +15,7 @@ import {
 import { Request, Response } from 'express'
 
 export const webhook = (_: Request, res: Response) => {
+  console.log("ブラッキーアプリ")
   try {
     res.status(200)
     res.send('Hello World')
