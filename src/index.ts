@@ -14,7 +14,7 @@ import {
 
 import { Request, Response } from 'express'
 
-export const webhook = (_: Request, res: Response) => {
+export const webhook = (req: Request, res: Response) => {
   console.log("ブラッキーアプリ")
   res.status(200).send("ブラッキーアプリ")
 }

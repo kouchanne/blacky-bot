@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.webhook = (_, res) => {
+exports.webhook = (req, res) => {
     console.log("ブラッキーアプリ");
     res.status(200).send("ブラッキーアプリ");
 };
