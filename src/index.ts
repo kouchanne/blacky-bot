@@ -14,23 +14,24 @@ import {
 
 import { Request, Response } from 'express'
 
-export const webhook = async (req: Request, res: Response) => {
-  console.log("ブラッキーアプリ")
+const authentication = (req: Request): void => {
+  console.log('認証チェック')
+  console.log(req)
+}
+
+const handleEvent = (event: any) => {
+  console.log(event)
+}
+
+export const webhook = async (req: Request, res: Response): Promise<void> => {
+  console.log('ブラッキーアプリ')
   await authentication(req)
-  res.status(200).send("ブラッキーアプリ")
+  await req.body.events.map(handleEvent)
+  res.status(200).send('ブラッキーアプリ')
 }
 
 // create LINE SDK config from env variables
 const config = {
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN || '',
   channelSecret: process.env.CHANNEL_SECRET || ''
-}
-
-/*
- * リクエスト元がLINE APIかどうかチェックする
-*/
-const authentication = (req: Request) => {
-  console.log("認証チェック")
-  console.log(req)
-
 }
