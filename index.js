@@ -1,14 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.webhook = (_, res) => {
-    try {
-        res.status(200);
-        res.send('Hello World');
-    }
-    catch (err) {
-        res.status(500);
-        res.send(err);
-    }
+    console.log("ブラッキーアプリ");
+    res.status(200).send("ブラッキーアプリ");
 };
 // create LINE SDK config from env variables
 const config = {

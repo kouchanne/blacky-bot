@@ -16,13 +16,7 @@ import { Request, Response } from 'express'
 
 export const webhook = (_: Request, res: Response) => {
   console.log("ブラッキーアプリ")
-  try {
-    res.status(200)
-    res.send('Hello World')
-  } catch (err) {
-    res.status(500)
-    res.send(err)
-  }
+  res.status(200).send("ブラッキーアプリ")
 }
 
 // create LINE SDK config from env variables
