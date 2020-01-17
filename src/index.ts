@@ -16,6 +16,7 @@ import { Request, Response } from 'express'
 
 export const webhook = (req: Request, res: Response) => {
   console.log("ブラッキーアプリ")
+  authentication(req)
   res.status(200).send("ブラッキーアプリ")
 }
 
@@ -23,4 +24,13 @@ export const webhook = (req: Request, res: Response) => {
 const config = {
   channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN || '',
   channelSecret: process.env.CHANNEL_SECRET || ''
+}
+
+/*
+ * リクエスト元がLINE APIかどうかチェックする
+*/
+const authentication = (req: Request) => {
+  console.log("認証チェック")
+  console.log(req)
+
 }
