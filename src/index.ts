@@ -14,9 +14,9 @@ import {
 
 import { Request, Response } from 'express'
 
-export const webhook = (req: Request, res: Response) => {
+export const webhook = async (req: Request, res: Response) => {
   console.log("ブラッキーアプリ")
-  authentication(req)
+  await authentication(req)
   res.status(200).send("ブラッキーアプリ")
 }
 
